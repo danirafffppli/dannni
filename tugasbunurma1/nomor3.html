@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kategori Usia</title>
+</head>
+<body>
+  <h2>Menentukan Kategori Usia</h2>
+
+  <p>Masukkan usia (tahun):</p>
+  <input type="number" id="usia" value="17">
+  <button onclick="cekUsia()">Cek Kategori</button>
+
+  <p id="hasil"></p>
+
+  <script>
+    function cekUsia() {
+      var usia = parseInt(document.getElementById("usia").value, 10);
+
+      if (isNaN(usia) || usia < 0) {
+        document.getElementById("hasil").textContent = "Masukkan angka usia yang valid.";
+        return;
+      }
+
+      if (usia < 13) {
+        document.getElementById("hasil").textContent = "Kategori: Anak-anak";
+      } else if (usia >= 13 && usia <= 19) {
+        document.getElementById("hasil").textContent = "Kategori: Remaja";
+      } else {
+        document.getElementById("hasil").textContent = "Kategori: Dewasa";
+      }
+    }
+  </script>
+</body>
+</html>
